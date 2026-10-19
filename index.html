@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>1. Seleccionar Archivo CSV</h2>
+        <input type="file" id="csvFile" accept=".csv">
+        <br><br>
+        <div id="columnSelectContainer">
+            <label for="numericColumnSelect">Columna numérica para análisis: </label>
+            <select id="numericColumnSelect">
+                <option value="">-- Elige una columna --</option>
+            </select>
+        </div>
+        <br>
+        <button onclick="procesarArchivo()">Cargar y Analizar</button>
+    </div>
+
+    <div class="card" id="filterSection">
+        <h2>2. Filtrar Información</h2>
+        <input type="text" id="filterInput" placeholder="Escribe para buscar...">
+        <button onclick="aplicarFiltro()">Filtrar</button>
+        <button onclick="limpiarFiltro()">Mostrar Todo</button>
+    </div>
+
+    <div class="card" id="statsSection">
+        <h2>3. Valores Estadísticos</h2>
+        <div class="stats-box" id="statsResults">
+            <p>Sube un archivo y selecciona una columna para ver las estadísticas.</p>
+        </div>
+        <button onclick="generarTXT()" style="margin-top: 15px;">Descargar TXT</button>
+    </div>
+
+    <div class="card">
+        <h2>4. Vista previa de Datos</h2>
+        <div class="table-container">
+            <table id="dataTable">
+                <thead><tr id="tableHeaders"></tr></thead>
+                <tbody id="tableBody"><tr><td colspan="5" style="text-align:center;">Sube un archivo CSV.</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
